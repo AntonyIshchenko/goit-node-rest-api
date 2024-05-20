@@ -88,6 +88,8 @@ const updateSubscription = async (req, res, next) => {
 };
 
 const updateAvatar = async (req, res, next) => {
+  if (!req.file) throw HttpError(400, 'File not found!');
+
   const fileName = req.file.path;
   const { _id: id } = req.user;
   const newName = `${id}-${crypto.randomUUID()}${path.extname(fileName)}`;
