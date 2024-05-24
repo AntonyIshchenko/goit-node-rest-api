@@ -37,4 +37,12 @@ usersRouter.patch(
   authCtrl.updateAvatar
 );
 
+usersRouter.get('/verify/:verificationToken', authCtrl.verifyEmail);
+
+usersRouter.post(
+  '/verify',
+  validateBody(userSchemas.verifyEmail, true),
+  authCtrl.sendVerificationEmail
+);
+
 export default usersRouter;
