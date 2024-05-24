@@ -1,6 +1,6 @@
 import usersService from '../services/authServices.js';
 import HttpError from '../helpers/HttpError.js';
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import gravatar from 'gravatar';
 import path from 'node:path';
